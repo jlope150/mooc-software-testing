@@ -14,15 +14,17 @@ public class RomanNumeral {
     // store key and value pair, where keys should be unique HashMap<K,V>
     // K: It is the type of keys maintained by this map.
     // V: It is the type of mapped values.
-
-    private static Map<Character, Integer> map;
+    // Line 18: Map method was originally private static but it was changed
+    // to private final static, because we know that Roman Numerals do not change
+    // and can be created once
+    private final static Map<Character, Integer> map;
 
     //since we want to covert roman Strings numerals to integers
     //we are representing roman numeral Strings as Characters(char)
     //we are going to map the standard Roman Numerals
 
     static {
-        map = new HashMap<Character, Integer>();
+        map = new HashMap<>();
         map.put('I', 1);
         map.put('V', 5);
         map.put('X', 10);
